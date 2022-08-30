@@ -7,12 +7,14 @@ const MainContainer = () => {
   // Initial State Call on Date
   const [data, setData] = useState([]);
 
-  // UseEffect call for data fetch.
+  // UseEffect call
   useEffect(() => {
-    fetchData();
+    setData(beamData);
   }, []);
 
-  // 
+  // Crea
+
+  console.log('data', data)
   return (
     <div className='shipping'>
       <MainData/>
