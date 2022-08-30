@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MainData } from '../components/MainData';
+import { StarterBoxes } from '../components/StarterBoxes';
 import beamData from '../perks.json';
 
 const MainContainer = () => {
@@ -42,7 +42,7 @@ const MainContainer = () => {
 
   return (
     <div className='shipping'>
-      <MainData/>
+      <StarterBoxes/>
     </div>
   )
 
