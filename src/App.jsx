@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { MainContainer } from './containers/MainContainer';
+import { ShippingScreen } from './containers/ShippingScreen';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <MainContainer/>
+      <ShippingScreen/>
     </div>
   )
 }
