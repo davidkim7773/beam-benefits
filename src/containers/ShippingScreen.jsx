@@ -14,9 +14,7 @@ const ShippingScreen = () => {
 
   // UseEffect call
   useEffect(() => {
-    // fetchData();
-    // Temp fix for endpoint issue 
-    setData(beamData);
+    fetchData();
   }, []);
 
   // Fetching Data from endpoint
@@ -27,14 +25,13 @@ const ShippingScreen = () => {
   async function fetchData () {
     try {
       const res = await fetch(dataUrl, {
-        headers: {
-          'Content-type': 'application/json',
-          'Accept': 'application/json'
-        },
-        mode: 'no-cors'
+        header: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json'
+        }
       })
       // Json the response.
-      const newData = res.json();
+      const newData = await res.json();
       setData(newData);
 
       // Error Handling
@@ -42,6 +39,8 @@ const ShippingScreen = () => {
       console.error(`Issue with FetchData ${err}`)
     }
   };
+  
+  console.log('data', data)
 
   // Create an object + or - that represents the number of colors per brush in this order blue, green, pink
   const colorData = {
