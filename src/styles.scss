@@ -1,8 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 
+body {
+  font-family: 'Archivo', sans-serif;
+}
+
+
+// CSS for Summary on Tabs
 .summary-starter {
   list-style: none;
 }
 
 .summary-refill {
   list-style: none;
+}
+
+// Tabs CSS
+.tabs-list {
+  list-style: none;
+}
+
+.starter-tab {
+  border: 1px solid 	#F8F8F8;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.refill-tab {
+  border: 1px solid 	#F8F8F8;
+  display: inline-block;
+  margin-left: 5px;
 }

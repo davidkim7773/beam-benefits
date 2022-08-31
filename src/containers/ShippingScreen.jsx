@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import { StarterBox } from '../components/StarterBox';
 import { RefillBox } from '../components/RefillBox';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import beamData from '../perks.json';
+import { Star } from '@mui/icons-material';
+import { color } from '@mui/system';
 
 const ShippingScreen = () => {
 
@@ -70,24 +68,26 @@ const ShippingScreen = () => {
 
   };
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <div className='shipping'>
-      <Box sx={{ width: '100%', typography: 'body1' }}>
-        <TabContext value={String(value)}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <TabList onChange={handleChange} aria-label='switch-component'>
-              <Tab label="Starter Boxes" value={<StarterBox/>}/>
-              <Tab label="Refill Boxes" value={<RefillBox/>}/>
-            </TabList>
-          </Box>
-          <TabPanel value={<StarterBox/>}>Item One</TabPanel>
-          <TabPanel alue={<RefillBox/>}>Item Two</TabPanel>
-        </TabContext>
-      </Box>
+      <Tabs>
+        <TabList className='tabs-list'>
+          <Tab className='starter-tab'>Starter Boxes</Tab>
+          <Tab className='refill-tab'>Refill Boxes</Tab>
+        </TabList>
+        <TabPanel>
+          <StarterBox
+            colorData={colorData}
+            starterBox={Math.ceil(colorData.totalBrushes / 2)}
+          />
+        </TabPanel>
+        <TabPanel>
+          <RefillBox
+            colorData={colorData}
+            refillBox={Math.floor(colorData.totalBrushes / 2)}
+          />
+        </TabPanel>
+      </Tabs>
     </div>
   )
 
