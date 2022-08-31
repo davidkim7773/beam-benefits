@@ -5,8 +5,9 @@ import beamData from '../perks.json';
 
 const ShippingScreen = () => {
 
-  // Initial State Call on Date
+  // Initial State Call on Date and true or false state depending on if Starter or Refill box is toggled
   const [data, setData] = useState([]);
+  const [starterToggle, setStarterToggle] = useState([]);
 
   // UseEffect call
   useEffect(() => {
@@ -43,7 +44,8 @@ const ShippingScreen = () => {
   const colorData = {
     blue: 0,
     green: 0,
-    pink: 0
+    pink: 0,
+    total: 0,
   };
 
   // Itereate through the initial data with a for loop and fill array. 
@@ -52,9 +54,16 @@ const ShippingScreen = () => {
     const el = data[i];
 
     // Use a conditional to add values to our colorData object.
-    if (colorData.hasOwnProperty(el.brush_color)) colorData[el.brush_color] += 1
-  }
+    if (colorData.hasOwnProperty(el.brush_color)) {
+      colorData[el.brush_color] += 1 
+    } 
 
+    if (colorData.hasOwnProperty('total')) {
+      colorData['total'] += 1;
+    }
+  }
+  
+  console.log(colorData)
   return (
     <div className='shipping'>
       <StarterBoxes

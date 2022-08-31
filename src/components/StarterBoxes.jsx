@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const StarterBoxes = () => {
+const StarterBoxes = (props) => {
   return(
-    <div className='returns'>
+    <div className='starter-box'>
       <h1>MainData</h1>
     </div>
   )
