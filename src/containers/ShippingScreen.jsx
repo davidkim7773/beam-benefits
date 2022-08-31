@@ -26,8 +26,8 @@ const ShippingScreen = () => {
     try {
       const res = await fetch(dataUrl, {
         header: {
+          'Content-type': 'application/json',
           'Accept': 'application/json',
-          'Content-type': 'application/json'
         }
       })
       // Json the response.

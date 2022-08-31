@@ -2,33 +2,41 @@
 
 body {
   font-family: 'Archivo', sans-serif;
+  background-color: #f4f0ec;
 }
 
 
 // CSS for Summary on Tabs
 .summary-starter {
   list-style: none;
+  padding: 0;
 }
 
 .summary-refill {
   list-style: none;
+  padding: 0;
 }
 
 // Tabs CSS
 .tabs-list {
   list-style: none;
+  padding: 0;
 }
 
 .starter-tab {
   border: 1px solid 	#F8F8F8;
   display: inline-block;
-  margin-right: 5px;
+  color: #00b7eb;
+  padding: 20px;
+  cursor: pointer;
 }
 
 .refill-tab {
   border: 1px solid 	#F8F8F8;
   display: inline-block;
-  margin-left: 5px;
+  color: #00b7eb;
+  padding: 20px;
+  cursor: pointer;
 }
 
 
