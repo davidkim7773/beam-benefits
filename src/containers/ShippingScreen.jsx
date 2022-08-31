@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
 import { StarterBox } from '../components/StarterBox';
 import { RefillBox } from '../components/RefillBox';
-import { Tab } from 'react-bootstrap';
-import { Tabs } from 'react-bootstrap';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 import beamData from '../perks.json';
 
 const ShippingScreen = () => {
 
   // Initial State Call on Date and true or false state depending on if Starter or Refill box is toggled
   const [data, setData] = useState([]);
-  const [starterToggle, setStarterToggle] = useState([]);
+  const [value, setValue] = useState(<StarterBox/>);
 
   // UseEffect call
   useEffect(() => {
@@ -67,31 +70,24 @@ const ShippingScreen = () => {
 
   };
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <div className='shipping'>
-      <Tabs
-        defaultActiveKey='starterBox'
-        className='mb-3'
-      >
-        <Tab
-          eventKey='starterBox'
-          title='StarterBox'
-        >
-          <StarterBox
-            colorData={colorData}
-            starterBox={Math.ceil(colorData.totalBrushes / 2)}
-          />
-        </Tab>
-        <Tab
-          eventKey='refillBox'
-          title='RefillBox'
-        >
-          <RefillBox
-            colorData={colorData}
-            refillBox={Math.floor(colorData.totalBrushes / 2)}
-          />
-        </Tab>
-      </Tabs>
+      <Box sx={{ width: '100%', typography: 'body1' }}>
+        <TabContext value={String(value)}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <TabList onChange={handleChange} aria-label='switch-component'>
+              <Tab label="Starter Boxes" value={<StarterBox/>}/>
+              <Tab label="Refill Boxes" value={<RefillBox/>}/>
+            </TabList>
+          </Box>
+          <TabPanel value={<StarterBox/>}>Item One</TabPanel>
+          <TabPanel alue={<RefillBox/>}>Item Two</TabPanel>
+        </TabContext>
+      </Box>
     </div>
   )
 
