@@ -39,11 +39,30 @@ const ShippingScreen = () => {
     }
   }
 
-  console.log('data', data)
+  // Create an object + or - that represents the number of colors per brush in this order blue, green, pink
+  const colorData = {
+    blue: 0,
+    green: 0,
+    pink: 0
+  };
+
+  // Itereate through the initial data with a for loop and fill array. 
+  for (let i = 0; i < data.length; i++) {
+    // Declare a Constant for whichever object we're currently on.
+    const el = data[i];
+
+    // Use a conditional to add values to our colorData object.
+    if (colorData.hasOwnProperty(el.brush_color)) colorData[el.brush_color] += 1
+  }
 
   return (
     <div className='shipping'>
-      
+      <StarterBoxes
+        colorData={colorData}
+      />
+      <RefillBoxes
+        colorData={colorData}
+      />
     </div>
   )
 
