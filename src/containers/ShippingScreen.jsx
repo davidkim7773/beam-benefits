@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import { StarterBoxes } from '../components/StarterBoxes';
-import { RefillBoxes } from '../components/RefillBoxes';
+import { StarterBox } from '../components/StarterBox';
+import { RefillBox } from '../components/RefillBox';
+import { Tab } from 'react-bootstrap';
+import { Tabs } from 'react-bootstrap';
 import beamData from '../perks.json';
 
 const ShippingScreen = () => {
@@ -13,7 +15,7 @@ const ShippingScreen = () => {
   useEffect(() => {
     // fetchData();
     // Temp fix for endpoint issue 
-    setData(beamData)
+    setData(beamData);
   }, []);
 
   // Fetching Data from endpoint
@@ -38,7 +40,7 @@ const ShippingScreen = () => {
     } catch (err) {
       console.error(`Issue with FetchData ${err}`)
     }
-  }
+  };
 
   // Create an object + or - that represents the number of colors per brush in this order blue, green, pink
   const colorData = {
@@ -58,17 +60,38 @@ const ShippingScreen = () => {
       colorData[el.brush_color] += 1 
       colorData['totalBrushes'] += 1;
     }
-  }
+  };
   
-  console.log(colorData)
+  // Conditional Rendering Function
+  function setToggle () {
+
+  };
+
   return (
     <div className='shipping'>
-      <StarterBoxes
-        colorData={colorData}
-      />
-      <RefillBoxes
-        colorData={colorData}
-      />
+      <Tabs
+        defaultActiveKey='starterBox'
+        className='mb-3'
+      >
+        <Tab
+          eventKey='starterBox'
+          title='StarterBox'
+        >
+          <StarterBox
+            colorData={colorData}
+            starterBox={Math.ceil(colorData.totalBrushes / 2)}
+          />
+        </Tab>
+        <Tab
+          eventKey='refillBox'
+          title='RefillBox'
+        >
+          <RefillBox
+            colorData={colorData}
+            refillBox={Math.floor(colorData.totalBrushes / 2)}
+          />
+        </Tab>
+      </Tabs>
     </div>
   )
 
