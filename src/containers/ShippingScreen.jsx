@@ -45,7 +45,7 @@ const ShippingScreen = () => {
     blue: 0,
     green: 0,
     pink: 0,
-    total: 0,
+    totalBrushes: 0,
   };
 
   // Itereate through the initial data with a for loop and fill array. 
@@ -56,10 +56,7 @@ const ShippingScreen = () => {
     // Use a conditional to add values to our colorData object.
     if (colorData.hasOwnProperty(el.brush_color)) {
       colorData[el.brush_color] += 1 
-    } 
-
-    if (colorData.hasOwnProperty('total')) {
-      colorData['total'] += 1;
+      colorData['totalBrushes'] += 1;
     }
   }
   
