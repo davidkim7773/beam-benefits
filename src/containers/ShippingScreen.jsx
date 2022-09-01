@@ -2,9 +2,6 @@ import { useState, useEffect } from 'react';
 import { StarterBox } from '../components/StarterBox';
 import { RefillBox } from '../components/RefillBox';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import beamData from '../perks.json';
-import { Star } from '@mui/icons-material';
-import { color } from '@mui/system';
 
 const ShippingScreen = () => {
 
@@ -40,14 +37,12 @@ const ShippingScreen = () => {
     }
   };
   
-  console.log('data', data)
-
   // Create an object + or - that represents the number of colors per brush in this order blue, green, pink
   const colorData = {
     blue: 0,
     green: 0,
     pink: 0,
-    totalBrushes: 0,
+    totalBrushes: data.length,
   };
 
   // Itereate through the initial data with a for loop and fill array. 
@@ -58,13 +53,7 @@ const ShippingScreen = () => {
     // Use a conditional to add values to our colorData object.
     if (colorData.hasOwnProperty(el.brush_color)) {
       colorData[el.brush_color] += 1 
-      colorData['totalBrushes'] += 1;
     }
-  };
-  
-  // Conditional Rendering Function
-  function setToggle () {
-
   };
 
   return (
@@ -77,13 +66,13 @@ const ShippingScreen = () => {
         <TabPanel>
           <StarterBox
             colorData={colorData}
-            starterBox={Math.ceil(colorData.totalBrushes / 2)}
+            starterBox={Math.ceil(data.length / 2)}
           />
         </TabPanel>
         <TabPanel>
           <RefillBox
             colorData={colorData}
-            refillBox={Math.floor(colorData.totalBrushes / 2)}
+            refillBox={Math.floor(data.length / 2)}
           />
         </TabPanel>
       </Tabs>
