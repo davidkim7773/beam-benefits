@@ -42,8 +42,10 @@ body {
   cursor: pointer;
 }
 
-// BRush and Head Box CSS
-.brushBox {
+// BrushBox CSS
+
+.starter-brushBox ul {
+  list-style: none;
   border: .5px solid #979797;
   width: 12em;
   height: 5em;
@@ -54,11 +56,83 @@ body {
   padding-left: 10px;
 }
 
-.brushBox li {
+.starter-brushBox ul li {
   padding-top: 12px;
 }
 
-.brushBox li::before {
+// .brushBox {
+//   border: .5px solid #979797;
+//   width: 12em;
+//   height: 5em;
+//   list-style: none;
+//   background: #F9EDE4;
+//   display: inline-block;
+//   margin-left: 10px;
+//   padding-left: 10px;
+// }
+
+.brushBox-blue  li::before {
+  align-items: center;
+    background-color: #01c4e9;
+    border-radius: 50%;
+    color: #01c4e9;
+    content: '+';
+    display: inline-flex;
+    font-weight: bold;
+    height: 16px;
+    justify-content: center;
+    margin-right: 10px;
+    width: 16px;
+    list-style: none;
+}
+
+.brushBox-green li::before {
+  align-items: center;
+    background-color: #e0e900;
+    border-radius: 50%;
+    color: #e0e900;
+    content: '+';
+    display: inline-flex;
+    font-weight: bold;
+    height: 16px;
+    justify-content: center;
+    margin-right: 10px;
+    width: 16px;
+    list-style: none;
+}
+
+.brushBox-pink li::before {
+  align-items: center;
+    background-color: #e92fac;
+    border-radius: 50%;
+    color: #e92fac;
+    content: '+';
+    display: inline-flex;
+    font-weight: bold;
+    height: 16px;
+    justify-content: center;
+    margin-right: 10px;
+    width: 16px;
+    list-style: none;
+}
+
+// Head Box CSS
+.refill-headBox ul {
+  border: .5px solid #979797;
+  width: 12em;
+  height: 5em;
+  list-style: none;
+  background: #F9EDE4;
+  display: inline-block;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.refill-headBox ul li {
+  padding-top: 12px;
+}
+
+.headBox-blue li::before {
   align-items: center;
     background-color: #01c4e9;
     border-radius: 50%;
@@ -72,26 +146,25 @@ body {
     width: 16px;
 }
 
-.headBox {
-  border: .5px solid #979797;
-  width: 12em;
-  height: 5em;
-  list-style: none;
-  background: #F9EDE4;
-  display: inline-block;
-  margin-left: 10px;
-  padding-left: 10px;
-}
-
-.headBox li {
-  padding-top: 12px;
-}
-
-.headBox li::before {
+.headBox-green li::before {
   align-items: center;
-    background-color: #01c4e9;
+    background-color: #e0e900;
     border-radius: 50%;
-    color: #01c4e9;
+    color: #e0e900;
+    content: '+';
+    display: inline-flex;
+    font-weight: bold;
+    height: 16px;
+    justify-content: center;
+    margin-right: 10px;
+    width: 16px;
+}
+
+.headBox-pink li::before {
+  align-items: center;
+    background-color: #e92fac;
+    border-radius: 50%;
+    color: #e92fac;
     content: '+';
     display: inline-flex;
     font-weight: bold;

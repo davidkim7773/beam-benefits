@@ -12,7 +12,7 @@ const StarterBox = (props) => {
   for (const prop in colorData) {
     if (colorData[prop] <= 2) {
       brushArr.push(
-        <ul className='brushBox'>
+        <ul className={`brushBox-${prop}`}>
           <li>{colorData[prop]} brushes</li>
           <li>{colorData[prop]} replacement head</li>
         </ul>

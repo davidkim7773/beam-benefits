@@ -10,7 +10,7 @@ const RefillBox = (props) => {
   for (const prop in colorData) {
     if (colorData[prop] <= 2) {
       headArr.push(
-        <ul className='headBox'>
+        <ul className={`headBox-${prop}`}>
           <li>{colorData[prop]} replacement heads</li>
           <li>{colorData[prop]} replacement heads</li>
         </ul>
@@ -25,7 +25,9 @@ const RefillBox = (props) => {
         <li>Refill Boxes: {refillBox} </li>
         <li>Replacement Heads: {colorData.totalBrushes}</li>
       </ul>
+      <div className='refill-headBox'>
       {headArr}
+      </div>
     </div>
   )
 }
