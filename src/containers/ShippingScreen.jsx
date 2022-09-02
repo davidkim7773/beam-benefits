@@ -17,7 +17,6 @@ const ShippingScreen = () => {
 
   // Fetching Data from endpoint
   // Initialize API Url 
-
   const dataUrl = 'https://beamtech.github.io/boxing-kata-js/perks.json';
 
   async function fetchData () {
