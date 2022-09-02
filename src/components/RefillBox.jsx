@@ -25,7 +25,7 @@ const RefillBox = (props) => {
   function renderFunc() {
     if (colorData) {
       return (
-        <ul className='summary-refill'>
+        <ul className='summary'>
         <li>Refill Boxes: {refillBox} </li>
         <li>Replacement Heads: {colorData.totalBrushes}</li>
       </ul>

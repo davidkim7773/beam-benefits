@@ -24,7 +24,7 @@ const StarterBox = (props) => {
  // Conditional Rendering Func (Ensures all data has prop drilled)
  function renderFunc () {
   if (colorData) return (
-    <ul className='summary-starter'>
+    <ul className='summary'>
       <li>Starter Boxes: {starterBox} </li>
       <li>Brushes: {colorData.totalBrushes}</li>
       <li>Replacement Heads: {colorData.totalBrushes}</li>
@@ -34,7 +34,7 @@ const StarterBox = (props) => {
 
   return(
     <div className='starter-box'>
-      <h4 className='summary-title'>Summary:</h4>
+      <h4>Summary:</h4>
         {renderFunc()}
       <div className='starter-brushBox'>
         {brushArr}
