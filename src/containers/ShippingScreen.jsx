@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { StarterBox } from '../components/StarterBox';
 import { RefillBox } from '../components/RefillBox';
+import { Error } from '../components/Error';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const ShippingScreen = () => {
 
   // Initial State Call on Date and true or false state depending on if Starter or Refill box is toggled
   const [data, setData] = useState([]);
-  const [value, setValue] = useState(<StarterBox/>);
+  const [value, setValue] = useState(true)
 
   // UseEffect call
   useEffect(() => {
@@ -34,6 +35,7 @@ const ShippingScreen = () => {
       // Error Handling
     } catch (err) {
       console.error(`Issue with FetchData ${err}`)
+      setValue(false);
     }
   };
   
@@ -56,12 +58,14 @@ const ShippingScreen = () => {
     }
   };
 
-  return (
-    <div className='shipping'>
-      <Tabs>
+  // Conditional Rendering Function For Error Message.
+  function renderFunc () {
+    if (data.length > 0 && value) {
+      return (
+        <Tabs>
         <TabList className='tabs-list'>
-          <Tab className='starter-tab'>Starter Boxes</Tab>
-          <Tab className='refill-tab'>Refill Boxes</Tab>
+          <Tab className='click-tab'>Starter Boxes</Tab>
+          <Tab className='click-tab'>Refill Boxes</Tab>
         </TabList>
         <TabPanel>
           <StarterBox
@@ -76,6 +80,15 @@ const ShippingScreen = () => {
           />
         </TabPanel>
       </Tabs>
+      )
+    } else {
+      return <Error/>
+    }
+  };
+
+  return (
+    <div className='shipping'>
+      {renderFunc()}
     </div>
   )
 

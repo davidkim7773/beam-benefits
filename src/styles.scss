@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap');
 
+// Variable Declaration of colors
+$beam-blue: #01c4e9;
+$beam-green: #e92fac;
+$beam-pink: #e0e900;
+
 body {
   font-family: 'Archivo', sans-serif;
   background-color: #f4f0ec;
@@ -26,16 +31,8 @@ body {
   padding: 0;
 }
 
-.starter-tab {
-  border: 1px solid 	#F8F8F8;
-  display: inline-block;
-  color: #00b7eb;
-  padding: 20px;
-  cursor: pointer;
-}
-
-.refill-tab {
-  border: 1px solid 	#F8F8F8;
+.click-tab {
+  border: 1px solid 	#B0B0B0;
   display: inline-block;
   color: #00b7eb;
   padding: 20px;
@@ -60,60 +57,49 @@ body {
   padding-top: 12px;
 }
 
-// .brushBox {
-//   border: .5px solid #979797;
-//   width: 12em;
-//   height: 5em;
-//   list-style: none;
-//   background: #F9EDE4;
-//   display: inline-block;
-//   margin-left: 10px;
-//   padding-left: 10px;
-// }
-
 .brushBox-blue  li::before {
   align-items: center;
-    background-color: #01c4e9;
-    border-radius: 50%;
-    color: #01c4e9;
-    content: '+';
-    display: inline-flex;
-    font-weight: bold;
-    height: 16px;
-    justify-content: center;
-    margin-right: 10px;
-    width: 16px;
-    list-style: none;
+  background-color: $beam-blue;
+  border-radius: 50%;
+  color: $beam-blue;
+  content: '+';
+  display: inline-flex;
+  font-weight: bold;
+  height: 16px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 16px;
+  list-style: none;
 }
 
 .brushBox-green li::before {
   align-items: center;
-    background-color: #e0e900;
-    border-radius: 50%;
-    color: #e0e900;
-    content: '+';
-    display: inline-flex;
-    font-weight: bold;
-    height: 16px;
-    justify-content: center;
-    margin-right: 10px;
-    width: 16px;
-    list-style: none;
+  background-color: $beam-green;
+  border-radius: 50%;
+  color: $beam-green;
+  content: '+';
+  display: inline-flex;
+  font-weight: bold;
+  height: 16px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 16px;
+  list-style: none;
 }
 
 .brushBox-pink li::before {
   align-items: center;
-    background-color: #e92fac;
-    border-radius: 50%;
-    color: #e92fac;
-    content: '+';
-    display: inline-flex;
-    font-weight: bold;
-    height: 16px;
-    justify-content: center;
-    margin-right: 10px;
-    width: 16px;
-    list-style: none;
+  background-color: $beam-pink;
+  border-radius: 50%;
+  color: $beam-pink;
+  content: '+';
+  display: inline-flex;
+  font-weight: bold;
+  height: 16px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 16px;
+  list-style: none;
 }
 
 // Head Box CSS
@@ -134,43 +120,43 @@ body {
 
 .headBox-blue li::before {
   align-items: center;
-    background-color: #01c4e9;
-    border-radius: 50%;
-    color: #01c4e9;
-    content: '+';
-    display: inline-flex;
-    font-weight: bold;
-    height: 16px;
-    justify-content: center;
-    margin-right: 10px;
-    width: 16px;
+  background-color: $beam-blue;
+  border-radius: 50%;
+  color: $beam-blue;
+  content: '+';
+  display: inline-flex;
+  font-weight: bold;
+  height: 16px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 16px;
 }
 
 .headBox-green li::before {
   align-items: center;
-    background-color: #e0e900;
-    border-radius: 50%;
-    color: #e0e900;
-    content: '+';
-    display: inline-flex;
-    font-weight: bold;
-    height: 16px;
-    justify-content: center;
-    margin-right: 10px;
-    width: 16px;
+  background-color: $beam-green;
+  border-radius: 50%;
+  color: $beam-green;
+  content: '+';
+  display: inline-flex;
+  font-weight: bold;
+  height: 16px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 16px;
 }
 
 .headBox-pink li::before {
   align-items: center;
-    background-color: #e92fac;
-    border-radius: 50%;
-    color: #e92fac;
-    content: '+';
-    display: inline-flex;
-    font-weight: bold;
-    height: 16px;
-    justify-content: center;
-    margin-right: 10px;
-    width: 16px;
+  background-color: $beam-pink;
+  border-radius: 50%;
+  color: $beam-pink;
+  content: '+';
+  display: inline-flex;
+  font-weight: bold;
+  height: 16px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 16px;
 }
 
